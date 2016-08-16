@@ -1,7 +1,8 @@
 select host, domain, logger, level, exceptiontype, exceptionmessage, count(*) Count from log
 where 1=1
 --and exceptiontype != ''
-and Date > dateadd(hour, -12, getdate())
+and Date > dateadd(hour, -24, getdate())
+--and Domain like 'Intake%'
 --and level in ('error', 'fatal', 'warn')
 group by host, domain, logger, level, exceptiontype, exceptionmessage
 order by count(*) desc

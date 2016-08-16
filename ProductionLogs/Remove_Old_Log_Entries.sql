@@ -8,7 +8,7 @@ begin
 
 		select top 1000 Id 
 		from log 
-		where Date < '2016-02-01'
+		where Date < '2016-05-01'
 		--order by Date
 	)
 
@@ -17,5 +17,8 @@ select @DELETED_ROWS
 --WAITFOR DELAY '00:00:01';
 
 end 
+
+
+select count(*) LogEntries from Log
 
 	
